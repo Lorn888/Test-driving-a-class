@@ -10,4 +10,9 @@ RSpec.describe DiaryEntry do
     diary_entry = DiaryEntry.new("First day at school", "It was tough")
     expect(diary_entry.count_words).to eq 3
     end
+    it "returns an estimate time it takes to read the contents" do
+    diary_entry = DiaryEntry.new("First day at school", "It was tough really really tough")
+    expect(diary_entry.reading_time(50)).to eq 1
+    end
+
 end
