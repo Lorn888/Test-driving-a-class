@@ -3,8 +3,9 @@ class DiaryEntry
       # ...
       @title = title
       @contents = contents
+      @word_to_start = 0
     end
-  
+    
     def title
       # Returns the title as a string
       return @title
@@ -32,7 +33,12 @@ class DiaryEntry
       end
     end
   
-    def reading_chunk(wpm, minutes) # `wpm` is an integer representing the number
+    def reading_chunk(wpm, minutes) 
+      words_to_read = wpm * minutes 
+      @word_to_start = word_to_start + words_to_read
+      return @contents.split(" ")[@word_to_start..words_to_read].join(" ")
+
+      # `wpm` is an integer representing the number
                                     # of words the user can read per minute
                                     # `minutes` is an integer representing the
                                     # number of minutes the user has to read
@@ -43,3 +49,7 @@ class DiaryEntry
       # The next call after that it should restart from the beginning.
     end
   end
+
+  diary_entry = DiaryEntry.new("First day at school", "It was tough really really tough")
+  p diary_entry.reading_chunk(2, 2)
+    
