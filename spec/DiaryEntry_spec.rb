@@ -14,9 +14,9 @@ RSpec.describe DiaryEntry do
     diary_entry = DiaryEntry.new("First day at school", "It was tough really really tough")
     expect(diary_entry.reading_time(50)).to eq 1
     end
-    it "returns a chunk of content to read" do
-    diary_entry = DiaryEntry.new("First day at school", "It was tough really really tough")
-    expect(diary_entry.reading_chunk(2, 2)).to eq "It was tough really"
+    # it "returns a chunk of content to read" do
+    # diary_entry = DiaryEntry.new("First day at school", "It was tough really really tough")
+    # expect(diary_entry.reading_chunk(2, 2)).to eq "It was tough really"
     
-    end 
+    #end 
 end
