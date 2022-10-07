@@ -35,7 +35,7 @@ class DiaryEntry
   
     def reading_chunk(wpm, minutes) 
       words_to_read = wpm * minutes 
-      @word_to_start = word_to_start + words_to_read
+      @word_to_start += words_to_read
       return @contents.split(" ")[@word_to_start..words_to_read].join(" ")
 
       # `wpm` is an integer representing the number
@@ -50,6 +50,6 @@ class DiaryEntry
     end
   end
 
-  diary_entry = DiaryEntry.new("First day at school", "It was tough really really tough")
+  p diary_entry = DiaryEntry.new("First day at school", "It was tough really really tough")
   p diary_entry.reading_chunk(2, 2)
     
