@@ -11,6 +11,13 @@ RSpec.describe GrammarStats do
         grammarStats = GrammarStats.new
         result = grammarStats.check("Some text")
         expect(result).to eq true
-    end
+     end
+
+     it "Rerutns false if text does not end with . " do
+        grammarStats = GrammarStats.new
+        result = grammarStats.check("Some text")
+        expect(result).to eq false
+     end
+     
 
 end

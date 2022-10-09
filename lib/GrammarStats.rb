@@ -6,9 +6,11 @@ class GrammarStats
     def check(text) # text is a string
       # Returns true or false depending on whether the text begins with a capital
       # letter and ends with a sentence-ending punctuation mark.
-    first_letter = text.split("")[0]
+     p first_letter = text.split("")[0]
+     p last_letter = text.split("")[-1]
+     
 
-      if first_letter === first_letter.capitalize
+      if first_letter === first_letter.capitalize && (last_letter === "." || "?" || "!")
         return true
       else 
         false
@@ -22,4 +24,4 @@ class GrammarStats
   end
   
   ok = GrammarStats.new
-    p ok.check("some text")
+    p ok.check("Some text!")
