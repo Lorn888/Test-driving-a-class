@@ -9,7 +9,7 @@ RSpec.describe GrammarStats do
 
     it "Rerutns true if text starts with upcase " do
         grammarStats = GrammarStats.new
-        result = grammarStats.check("Some text")
+        result = grammarStats.check("Some text.")
         expect(result).to eq true
      end
 
@@ -18,6 +18,12 @@ RSpec.describe GrammarStats do
         result = grammarStats.check("Some text")
         expect(result).to eq false
      end
+
+     it "Rerutns true if text does  end with . and starts with capital letter " do
+      grammarStats = GrammarStats.new
+      result = grammarStats.check("Some text.")
+      expect(result).to eq true
+   end
      
 
 end

@@ -9,11 +9,10 @@ class GrammarStats
      p first_letter = text.split("")[0]
      p last_letter = text.split("")[-1]
      
-
-      if first_letter === first_letter.capitalize && (last_letter === "." || "?" || "!")
-        return true
+      if first_letter == first_letter.capitalize && (last_letter == "." || last_letter == "!" || last_letter == "?")
+         return true
       else 
-        false
+         return false
       end
     end
   
@@ -24,4 +23,4 @@ class GrammarStats
   end
   
   ok = GrammarStats.new
-    p ok.check("Some text!")
+    p ok.check("Some text?")
