@@ -24,6 +24,12 @@ RSpec.describe GrammarStats do
       result = grammarStats.check("Some text.")
       expect(result).to eq true
    end
+
+   it "Rerutns true if text does  end with ! and starts with capital letter " do
+      grammarStats = GrammarStats.new
+      result = grammarStats.check("Some text!")
+      expect(result).to eq true
+   end
      
 
 end
