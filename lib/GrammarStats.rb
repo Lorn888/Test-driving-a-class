@@ -22,7 +22,7 @@ class GrammarStats
   
     def percentage_good
        percentage =  (100 * @passed)  / (@failed + @passed)
-       return percentage
+       return "#{percentage}%"
       # Returns as an integer the percentage of texts checked so far that passed
       # the check defined in the `check` method. The number 55 represents 55%.
     end
@@ -32,8 +32,8 @@ class GrammarStats
   ok.check("Some text")
   ok.check("Some text")
   ok.check("Some text")
-  ok.check("Some text")
-  ok.check("Some text")
+  ok.check("Some text.")
+  ok.check("Some text!")
   ok.check("Some text?")
   ok.check("Some text")
   ok.check("Some text?")
